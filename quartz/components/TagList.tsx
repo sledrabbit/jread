@@ -4,8 +4,9 @@ import { classNames } from "../util/lang"
 
 const TagList: QuartzComponent = ({ fileData, displayClass }: QuartzComponentProps) => {
   const tags = fileData.frontmatter?.tags
+  const showTags = fileData.frontmatter?.showTags ?? true
   const baseDir = pathToRoot(fileData.slug!)
-  if (tags && tags.length > 0) {
+  if (showTags && tags && tags.length > 0) {
     return (
       <ul class={classNames(displayClass, "tags")}>
         {tags.map((tag) => {
@@ -39,7 +40,7 @@ TagList.css = `
 .section-li > .section > .tags {
   justify-content: flex-end;
 }
-  
+
 .tags > li {
   display: inline-block;
   white-space: nowrap;

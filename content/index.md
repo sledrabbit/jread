@@ -1,6 +1,6 @@
 ---
 title: home
-enableTags: false
+showTags: false
 ---
 
 so far i have a #how-to
